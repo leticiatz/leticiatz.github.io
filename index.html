@@ -19,6 +19,11 @@
         var firstScriptTag = document.getElementsByTagName('script')[0];
         firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
+        var urlParams = new URLSearchParams(window.location.search);
+        var start = urlParams.get('start');
+        var end = urlParams.get('end');
+        
+
         // 3. This function creates an <iframe> (and YouTube player)
         //    after the API code downloads.
         var player;
@@ -28,8 +33,9 @@
                 width: '640',
                 videoId: '0yeJpMLPlEo',
                 playerVars: {
-                    start: '30',
-                    end: '35'
+                    autoplay: 'true',
+                    start: start,
+                    end: end
                     },
 
             });
